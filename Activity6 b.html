@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        legend {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+        <form action="#" method="post">
+            <h2>NOVELS</h2>
+            <div class="form-group">
+                <label for="textbox">Favourite genre for novel:</label>
+                <input type="text" id="textbox" name="textbox" placeholder="Enter text here">
+            </div>
+
+            <fieldset>
+                <legend>Your age</legend>
+                <div class="form-group">
+                    <input type="radio" id="radio1" name="radioGroup" value="Above 18">
+                    <label for="radio1">Above 18</label>
+                </div>
+                <div class="form-group">
+                    <input type="radio" id="radio2" name="radioGroup" value="Below 18">
+                    <label for="radio2">Below 18</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Genres you like</legend>
+                <div class="form-group">
+                    <input type="checkbox">
+                    <label>Romance</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox">
+                    <label>Thriller</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox">
+                    <label>Action</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox">
+                    <label>Crime</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox">
+                    <label>Horror</label>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label>How much can you read novel in a day:</label>
+                <select id="selectBox" name="selectBox" size="3">
+                    <option value="3-4 hours">3-4 hours</option>
+                    <option value="4-5 hours">4-5 hours</option>
+                    <option value="5-6 hours">5-6 hours</option>
+                    <option value="6-8 hours">6-8 hours</option>
+                    <option value="8-10 hours">8-10 hours</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Best artist:</label>
+                <select id="optionBox" name="optionBox">
+                    <option value="James Arthur">James Arthur</option>
+                    <option value="Colleen Hoover">Colleen Hoover</option>
+                    <option value="Ana Huang">Ana Huang</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Tell us about your favorite novel:</label>
+                <textarea name="textarea" rows="4" placeholder="Enter long text here..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Favorite type of songs:</label>
+                <input list="datalistOptions" placeholder="Choose an option">
+                <datalist id="datalistOptions">
+                    <option value="Jazz">
+                    <option value="Pop">
+                    <option value="Rock">
+                    <option value="Hip-hop">
+                </datalist>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up and Sign In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="signup-container">
+        <h2>Sign Up</h2>
+        <form action="#signin-container" method="get">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <div class="link">
+            <p>Already have an account? <a href="#signin-container">Sign In</a></p>
+        </div>
+    </div>
+    <div class="container" id="signin-container" style="display:none;">
+        <h2>Sign In</h2>
+        <form action="#signup-container" method="get">
+            <div class="form-group">
+                <label for="signin-email">Email ID:</label>
+                <input type="email" id="signin-email" name="signin-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="signin-password">Password:</label>
+                <input type="password" id="signin-password" name="signin-password" placeholder="Enter your password" required>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <input type="checkbox" id="show-password" name="show-password">
+                <label for="show-password">Show Password</label>
+            </div>
+            <button type="submit" class="btn">Sign In</button>
+        </form>
+        <div class="link">
+            <a href="#" style="text-decoration: none; color: teal;">Forgot Username / Password?</a><br>
+            <p>Don't have an account? <a href="#signup-container">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        const signUpContainer = document.getElementById('signup-container');
+        const signInContainer = document.getElementById('signin-container');
+
+        document.querySelectorAll('a[href="#signin-container"]').forEach(link => {
+            link.addEventListener('click', () => {
+                signUpContainer.style.display = 'none';
+                signInContainer.style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('a[href="#signup-container"]').forEach(link => {
+            link.addEventListener('click', () => {
+                signInContainer.style.display = 'none';
+                signUpContainer.style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>
